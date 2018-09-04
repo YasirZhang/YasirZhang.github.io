@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>我为什么写博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello worldhello world我来到一个大型互联网公司, 同事很nice, 管理很自由, 在这里开始了我的码农生涯. 我很敬重部门老大, 但更相信我将来一定比他强. 我看到30岁左右的公司前辈们, 为了家庭奔波, 为了孩子操劳, 心里或许拂过一丝轻谑. ( 当我写这句话, 我是在对自己幼稚的轻谑 ) 当然我并不是毫无基础的就有了这些脆弱的自信. 我一直相信, 只要我每一天都在进步,">
+  <meta name="description" content="一、说明文章目录功能可以点击这里查看视频页面可以点击这里查看粗略实现，有问题可以在下方评论区留言，或者留言板留言 二、文章目录功能1、添加CSS样式 打开themes\yilia\source下的main.234bc0.css文件，添加如下代码：css样式我也放到了github上：https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我为什么写博客">
 <meta property="og:url" content="http://yoursite.com/2018/08/31/why-write-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hello worldhello world我来到一个大型互联网公司, 同事很nice, 管理很自由, 在这里开始了我的码农生涯. 我很敬重部门老大, 但更相信我将来一定比他强. 我看到30岁左右的公司前辈们, 为了家庭奔波, 为了孩子操劳, 心里或许拂过一丝轻谑. ( 当我写这句话, 我是在对自己幼稚的轻谑 ) 当然我并不是毫无基础的就有了这些脆弱的自信. 我一直相信, 只要我每一天都在进步,">
+<meta property="og:description" content="一、说明文章目录功能可以点击这里查看视频页面可以点击这里查看粗略实现，有问题可以在下方评论区留言，或者留言板留言 二、文章目录功能1、添加CSS样式 打开themes\yilia\source下的main.234bc0.css文件，添加如下代码：css样式我也放到了github上：https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/ma">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T02:56:13.590Z">
+<meta property="og:updated_time" content="2018-09-04T03:06:33.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我为什么写博客">
-<meta name="twitter:description" content="hello worldhello world我来到一个大型互联网公司, 同事很nice, 管理很自由, 在这里开始了我的码农生涯. 我很敬重部门老大, 但更相信我将来一定比他强. 我看到30岁左右的公司前辈们, 为了家庭奔波, 为了孩子操劳, 心里或许拂过一丝轻谑. ( 当我写这句话, 我是在对自己幼稚的轻谑 ) 当然我并不是毫无基础的就有了这些脆弱的自信. 我一直相信, 只要我每一天都在进步,">
+<meta name="twitter:description" content="一、说明文章目录功能可以点击这里查看视频页面可以点击这里查看粗略实现，有问题可以在下方评论区留言，或者留言板留言 二、文章目录功能1、添加CSS样式 打开themes\yilia\source下的main.234bc0.css文件，添加如下代码：css样式我也放到了github上：https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/ma">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -83,7 +83,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/YasirZhang/" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/275969940" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=275969940&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:275969940@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -122,7 +122,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/YasirZhang/" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/275969940" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=275969940&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:275969940@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -163,19 +163,43 @@
 
         
         <a href="/2018/08/31/why-write-blog/" class="archive-article-date">
-  	<time datetime="2018-09-03T02:56:13.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
+  	<time datetime="2018-09-04T03:06:33.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
 </a>
         
       </header>
     
+	<!-- 目录内容 -->
+	
+		<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+		<span class="btn-bg"></span>
+		<span class="btn-text">文章导航</span>
+		</p>
+		<div id="toc-article" class="toc-article">
+			<span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+			<strong class="toc-title">文章目录</strong>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、说明"><span class="toc-number">1.</span> <span class="toc-text">一、说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、文章目录功能"><span class="toc-number">2.</span> <span class="toc-text">二、文章目录功能</span></a></li></ol>
+	   </div>
+	   <script type="text/javascript">
+		function showToc(){
+			var toc_article = document.getElementById("toc-article");
+			var show_toc_btn = document.getElementById("show-toc-btn");
+			toc_article.setAttribute("style","display:block");
+			show_toc_btn.setAttribute("style","display:none");
+			};
+		function showBtn(){
+			var toc_article = document.getElementById("toc-article");
+			var show_toc_btn = document.getElementById("show-toc-btn");
+			toc_article.setAttribute("style","display:none");
+			show_toc_btn.setAttribute("style","display:block");
+			};
+	   </script>
+	     
+	<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h6><h1 id="hello-world-1"><a href="#hello-world-1" class="headerlink" title="hello world"></a>hello world</h1><p>我来到一个大型互联网公司, 同事很nice, 管理很自由, 在这里开始了我的码农生涯.</p>
-<p>我很敬重部门老大, 但更相信我将来一定比他强. 我看到30岁左右的公司前辈们, 为了家庭奔波, 为了孩子操劳, 心里或许拂过一丝轻谑. ( 当我写这句话, 我是在对自己幼稚的轻谑 )</p>
-<p>当然我并不是毫无基础的就有了这些脆弱的自信. 我一直相信, 只要我每一天都在进步, 总会有到达成功的那一天. 所以, 每次游戏碰到大家都不熟悉的领域, 我都自告奋勇去领命, 然后在前辈们都回家 陪老婆孩子的时候, 我却在钻研这些小众歪门的技术, 自以为这是能力的体现. 事实也证明了它的确代表了我的一部分能力, 也让它在上级面前得到了彰显, 但远没有我想象的那么重要. 因为, 如果真的有那么重要, 为什么旁边独立办公室里没有我.</p>
-<p>那时天真的以为月入N万, 能在北京好好生存, 便是成功. 于是我很开心, 因为那”成功”是如此的可以触摸, 就在眼前. 我随便搞搞5,6年也就达到了, 稍微使点劲儿也许就3,4年. 而在那之后, 我就可以放心的做很多自己想做的事情, 旅游, 摄影, 吃喝玩乐之类.</p>
-<p>而现在, 我缺找不到对”成功”的定义了. 人生最大的无耐就在于, 当马上就达到终点却发现自己看走了眼. 让我开始怀疑它的因素有很多: 比如发现即使月入2N万也没法过得上我上面提到的体面的生活, 比如北京的空气和气候总是把出门散心的想法扼杀在摇篮里, 再比如北京复杂的生存环境.</p>
-<p>一方面,我对新的社会各种无知; 另一方面却坚定不移的相信努力就会比别人强. 我见过很多牛人写博客, 就以为这是牛人谓之牛人的原因. 我如果坚持照做, 就会成为牛人. 说白了, 这从头至尾就是一种低级的模仿, 不明所以的跟随.</p>
+        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><p>文章目录功能可以点击这里查看<br>视频页面可以点击这里查看<br>粗略实现，有问题可以在下方评论区留言，或者留言板留言</p>
+<h2 id="二、文章目录功能"><a href="#二、文章目录功能" class="headerlink" title="二、文章目录功能"></a>二、文章目录功能</h2><p>1、添加CSS样式</p>
+<p>打开themes\yilia\source下的main.234bc0.css文件，添加如下代码：<br>css样式我也放到了github上：<a href="https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/master/css/main.234bc0.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/master/css/main.234bc0.css</a><br>使用的是别人的css，可能有冗余的部分</p>
 
       
 
@@ -205,6 +229,9 @@
     <div class="article-info article-info-index">
       
       
+	  <span id="busuanzi_container_page_pv">
+		  |阅读量(<span id="busuanzi_value_page_pv"></span>)
+		</span>
       
 
       
@@ -291,6 +318,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、说明"><span class="toc-number">1.</span> <span class="toc-text">一、说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、文章目录功能"><span class="toc-number">2.</span> <span class="toc-text">二、文章目录功能</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -323,6 +363,8 @@ gitment.render('gitment-ctn')
   
 
 
+
+
           </div>
         </div>
       </div>
@@ -337,7 +379,11 @@ gitment.render('gitment-ctn')
       	</div>
     </div>
   </div>
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv">
 </footer>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {

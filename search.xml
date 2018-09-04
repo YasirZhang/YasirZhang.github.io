@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[我为什么写博客]]></title>
+    <url>%2F2018%2F08%2F31%2Fwhy-write-blog%2F</url>
+    <content type="text"><![CDATA[一、说明文章目录功能可以点击这里查看视频页面可以点击这里查看粗略实现，有问题可以在下方评论区留言，或者留言板留言 二、文章目录功能1、添加CSS样式 打开themes\yilia\source下的main.234bc0.css文件，添加如下代码：css样式我也放到了github上：https://raw.githubusercontent.com/lawlite19/Blog-Back-Up/master/css/main.234bc0.css使用的是别人的css，可能有冗余的部分]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F08%2F30%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
