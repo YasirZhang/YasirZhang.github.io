@@ -148,6 +148,306 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mini-program-dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/Mini-program-dev/">Mini_program_dev</a>
+    </h1>
+  
+
+		<br>
+	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		<span class="icon-sort"></span>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		</span>
+		</a>
+        
+        <a href="/2018/09/05/Mini-program-dev/" class="archive-article-date">
+  	<time datetime="2018-09-06T08:59:15.127Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
+</a>
+        
+      </header>
+    
+	<!-- 目录内容 -->
+	     
+	<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、小程序准备工作"><a href="#一、小程序准备工作" class="headerlink" title="一、小程序准备工作"></a>一、小程序准备工作</h2><h3 id="ensp-8194-1-注册"><a href="#ensp-8194-1-注册" class="headerlink" title="&ensp;&#8194;1.注册"></a>&ensp;&#8194;1.<a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1&amp;token=&amp;lang=zh_CN" target="_blank" rel="noopener">注册</a></h3><ul>
+<li>作为登录帐号，请填写<strong>未被微信公众平台注册，未被微信开放平台注册，未被个人微信号绑定的邮箱</strong></li>
+<li>一个身份证号码只能注册<strong>5</strong>个小程序</li>
+<li>企业类型帐号可选择两种<strong>主体验证</strong>方式(请在<strong>10天内完成汇款</strong>，否则将注册失败)：<br>方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。<br>方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。<br><img src="/2018/09/05/Mini-program-dev/bindcorp.jpg" alt="企业主体"></li>
+</ul>
+<h3 id="ensp-8194-2-小程序信息完善"><a href="#ensp-8194-2-小程序信息完善" class="headerlink" title="&ensp;&#8194;2.小程序信息完善"></a>&ensp;&#8194;2.小程序信息完善</h3><ul>
+<li>填写名称、头像、服务类目</li>
+</ul>
+<h3 id="ensp-8194-3-开发前准备"><a href="#ensp-8194-3-开发前准备" class="headerlink" title="&ensp;&#8194;3.开发前准备"></a>&ensp;&#8194;3.开发前准备</h3><ul>
+<li>绑定开发者（已认证的小程序最多可绑定20个开发者，40个体验者，只能通过<strong>微信号</strong>搜索）</li>
+<li>进入“设置-开发设置”，获取AppID信息（AppID &amp;&amp; AppSecret）</li>
+<li><strong>服务器域名配置</strong>（包括域名以及HTTPS证书，不配置发布后无法请求）<br><img src="/2018/09/05/Mini-program-dev/domain_config.png" alt="域名配置"><br><img src="/2018/09/05/Mini-program-dev/domain_page.png" alt="域名配置页"></li>
+<li>小程序申请微信支付(<strong>可选</strong>)：<br>登录小程序—设置—基本设置—微信认证—详情，认证后即可申请支付。</li>
+<li>绑定微信开放平台帐号：<br>可与帐号下的其他移动应用、网站应用及公众号打通，通过<strong>UnionID</strong>机制满足在多个应用和公众号之间<strong>统一用户帐号</strong>的需求。<br><a href="https://open.weixin.qq.com" target="_blank" rel="noopener">登录微信开放平台</a>—管理中心—公众帐号—绑定公众帐号</li>
+</ul>
+<h3 id="ensp-8194-4-安装开发工具"><a href="#ensp-8194-4-安装开发工具" class="headerlink" title="&ensp;&#8194;4.安装开发工具"></a>&ensp;&#8194;4.<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=18090422" target="_blank" rel="noopener">安装开发工具</a></h3><ul>
+<li>填入申请到的小程序的AppID</li>
+<li>开启小程序之旅：<br><img src="/2018/09/05/Mini-program-dev/tool.png" alt="开发工具"><h4 id="预览："><a href="#预览：" class="headerlink" title="预览："></a>预览：</h4><img src="/2018/09/05/Mini-program-dev/preview.jpg" alt="编译预览"></li>
+</ul>
+<h2 id="二、小程序开发"><a href="#二、小程序开发" class="headerlink" title="二、小程序开发"></a>二、小程序开发</h2><h3 id="ensp-8194-1-上传代码-amp-amp-发布"><a href="#ensp-8194-1-上传代码-amp-amp-发布" class="headerlink" title="&ensp;&#8194;1.上传代码&amp;&amp;发布"></a>&ensp;&#8194;1.上传代码&amp;&amp;发布</h3><ul>
+<li>点击开发者工具顶部操作栏的<strong>上传</strong>按钮，填写版本号以及项目备注</li>
+<li>登录小程序管理后台 - 开发管理 - 开发版本，将这个版本设置<strong>体验版</strong>或者是<strong>提交审核</strong><br><img src="/2018/09/05/Mini-program-dev/version.png" alt="小程序版本"><h3 id="2-数据运营"><a href="#2-数据运营" class="headerlink" title="2.数据运营"></a>2.数据运营</h3></li>
+<li>有两种方式可以方便的看到小程序的运营数据：<br>方法一：<br> 登录 小程序管理后台 - 数据分析<br>方法二：<br> 使用<strong>小程序数据助手</strong>，在微信中方便的查看运营数据(仅可查看<strong>已发布</strong>小程序)<br> <img src="/2018/09/05/Mini-program-dev/mydata.jpg" alt="小程序版本"><h3 id="3-性能面板"><a href="#3-性能面板" class="headerlink" title="3.性能面板"></a>3.性能面板</h3></li>
+<li>在开发版小程序，打开方法：进入开发版小程序，进入右上角更多按钮，点击「显示性能窗口」。<br><img src="/2018/09/05/Mini-program-dev/xingneng.jpg" alt="性能面板"><h2 id="三、相关公共接口"><a href="#三、相关公共接口" class="headerlink" title="三、相关公共接口"></a>三、相关公共接口</h2><h3 id="ensp-8194-1-获取-access-token"><a href="#ensp-8194-1-获取-access-token" class="headerlink" title="&ensp;&#8194;1.获取 access_token"></a>&ensp;&#8194;1.获取 access_token</h3></li>
+<li>很多重要功能都需要先得到access token,包括：<strong>小程序模板消息</strong>、<strong>小程序客服消息</strong>、<strong>获取小程序二维码</strong>等。<br><img src="/2018/09/05/Mini-program-dev/access_token.png" alt="小程序版本"><h3 id="ensp-8194-2-模板消息"><a href="#ensp-8194-2-模板消息" class="headerlink" title="&ensp;&#8194;2.模板消息"></a>&ensp;&#8194;2.模板消息</h3></li>
+<li>为开发者提供了可以高效触达用户的模板消息能力，以便实现服务的闭环并提供更佳的体验，步骤：<br>&ensp;&#8194;获取模板ID(接口获取模版ID或平台手动获取)。<br><img src="/2018/09/05/Mini-program-dev/mp-notice.png" alt="模板"><br>&ensp;&#8194;页面的<form>组件，属性report-submit为true时，可以声明为需发模板消息，此时点击按钮提交表单可以获取formId，用于发送模板消息。或者当用户完成支付行为，可以获取prepay_id用于发送模板消息。<br>&ensp;&#8194;调用接口下发模板消息。<br><img src="/2018/09/05/Mini-program-dev/notice.png" alt="模板消息"><h3 id="ensp-8194-3-客服消息"><a href="#ensp-8194-3-客服消息" class="headerlink" title="&ensp;&#8194;3.客服消息"></a>&ensp;&#8194;3.客服消息</h3></form></li>
+<li>当用户在客服会话发送消息（或进行某些特定的用户操作引发的事件推送时），微信服务器会将消息（或事件）的数据包（JSON或者XML格式）POST请求开发者填写的URL。开发者收到请求后可以使用发送客服消息接口进行异步回复。</li>
+<li>用户在小程序“客服会话按钮”进入客服会话时,一般默认程序返回信息，如：您好，有什么能帮助你?；其他文本信息，图文信息转发到<strong><a href="https://developers.weixin.qq.com/miniprogram/introduction/custom.html#网页版客服工具" target="_blank" rel="noopener">网页版客服工具</a></strong>即可。<br><img src="/2018/09/05/Mini-program-dev/h1.png" alt="客服消息"></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/callback_help.html" target="_blank" rel="noopener">接入指引</a>：<br><img src="/2018/09/05/Mini-program-dev/msg_config.png" alt="消息接入步骤"><h3 id="ensp-8194-4-生成二维码"><a href="#ensp-8194-4-生成二维码" class="headerlink" title="&ensp;&#8194;4.生成二维码"></a>&ensp;&#8194;4.<a href="https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html" target="_blank" rel="noopener">生成二维码</a></h3></li>
+<li>通过后台接口可以获取小程序任意页面的二维码，扫描该二维码可以直接进入小程序对应的页面</li>
+<li>根据需求选择不同的生成接口</li>
+</ul>
+<h2 id="三、小程序与公众号开发区别"><a href="#三、小程序与公众号开发区别" class="headerlink" title="三、小程序与公众号开发区别"></a>三、小程序与公众号开发区别</h2><h3 id="ensp-8194-1-相同点"><a href="#ensp-8194-1-相同点" class="headerlink" title="&ensp;&#8194;1.相同点"></a>&ensp;&#8194;1.相同点</h3><ul>
+<li>需要AccessToken中控服务器，提供主动刷新和被动刷新机制来刷新accessToken并存储（为了防止并发刷新，注意加并发锁），提供给业务逻辑有效的accessToken</li>
+<li>客服消息机制一致：如，服务器无法保证在五秒内处理回复，则必须回复“success”或者“”（空串），否则微信后台会发起三次重试。三次重试后，依旧没有及时回复任何内容，系统自动在粉丝会话界面出现错误提示“该公众号暂时无法提供服务，请稍后再试”<br><img src="/2018/09/05/Mini-program-dev/times-out.png" alt="重试3次后"><h3 id="ensp-8194-2-不同点"><a href="#ensp-8194-2-不同点" class="headerlink" title="&ensp;&#8194;2.不同点"></a>&ensp;&#8194;2.不同点</h3></li>
+<li>生成二维码方式不一致：公众号要通过tickit换取二维码，而小程序直接返回二维码文件流</li>
+<li>小程序<a href="https://blog.csdn.net/abcwanglinyong/article/details/80267901" target="_blank" rel="noopener">登录流程</a>，公众号无此流程：<br><img src="/2018/09/05/Mini-program-dev/Login-process.png" alt="登录流程"></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/05/Mini-program-dev/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
+    <article id="post-小程序开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/小程序开发/">小程序开发步骤</a>
+    </h1>
+  
+
+		<br>
+	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		<span class="icon-sort"></span>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		</span>
+		</a>
+        
+        <a href="/2018/09/05/小程序开发/" class="archive-article-date">
+  	<time datetime="2018-09-06T08:59:15.132Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
+</a>
+        
+      </header>
+    
+	<!-- 目录内容 -->
+	     
+	<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、小程序注册"><a href="#一、小程序注册" class="headerlink" title="一、小程序注册"></a>一、<a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1&amp;token=&amp;lang=zh_CN" target="_blank" rel="noopener">小程序注册</a></h2><h3 id="ensp-8194-1-注意事项"><a href="#ensp-8194-1-注意事项" class="headerlink" title="&ensp;&#8194;1.注意事项"></a>&ensp;&#8194;1.注意事项</h3><ul>
+<li>作为登录帐号，请填写<strong>未被微信公众平台注册，未被微信开放平台注册，未被个人微信号绑定的邮箱</strong></li>
+<li>一个身份证号码只能注册<strong>5</strong>个小程序</li>
+<li>企业类型帐号可选择两种主体验证方式：<br>方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。<br>方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。</li>
+</ul>
+<h3 id="ensp-8194-2-小程序信息填写"><a href="#ensp-8194-2-小程序信息填写" class="headerlink" title="&ensp;&#8194;2.小程序信息填写"></a>&ensp;&#8194;2.小程序信息填写</h3><ul>
+<li>填写名称、头像、服务类目</li>
+<li>通过管理员微信扫码二维码生成AppSecret</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/05/小程序开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
+    <article id="post-test-img" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/test-img/">test-img</a>
+    </h1>
+  
+
+		<br>
+	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		<span class="icon-sort"></span>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		</span>
+		</a>
+        
+        <a href="/2018/09/04/test-img/" class="archive-article-date">
+  	<time datetime="2018-09-06T08:59:15.135Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
+</a>
+        
+      </header>
+    
+	<!-- 目录内容 -->
+	     
+	<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2018/09/04/test-img/car.jpg" alt="马自达CX-5"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图片测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">马自达</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/04/test-img/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-why-write-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,9 +459,16 @@
     </h1>
   
 
+		<br>
+	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		<span class="icon-sort"></span>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		</span>
+		</a>
         
         <a href="/2018/08/31/why-write-blog/" class="archive-article-date">
-  	<time datetime="2018-09-04T03:06:33.596Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
+  	<time datetime="2018-09-06T08:59:15.139Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
 </a>
         
       </header>
@@ -182,9 +489,6 @@
     <div class="article-info article-info-index">
       
       
-	  <span id="busuanzi_container_page_pv">
-		  |阅读量(<span id="busuanzi_value_page_pv"></span>)
-		</span>
       
 
       
@@ -232,9 +536,16 @@
     </h1>
   
 
+		<br>
+	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		<span class="icon-sort"></span>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		</span>
+		</a>
         
         <a href="/2018/08/30/hello-world/" class="archive-article-date">
-  	<time datetime="2018-09-03T02:48:12.783Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
+  	<time datetime="2018-09-06T08:59:15.143Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
 </a>
         
       </header>
@@ -261,9 +572,6 @@
     <div class="article-info article-info-index">
       
       
-	  <span id="busuanzi_container_page_pv">
-		  |阅读量(<span id="busuanzi_value_page_pv"></span>)
-		</span>
       
 
       
@@ -395,6 +703,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图片测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">马自达</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
